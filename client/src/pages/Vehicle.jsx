@@ -141,6 +141,8 @@ const Vehicle = () => {
               alert(text[lang].invalidId);
             }
             else if (res.status === 204) {
+              setVehicles([]);
+              setTotalPages(1);
             }
             else if (res.ok) {
               const data = await res.json();
