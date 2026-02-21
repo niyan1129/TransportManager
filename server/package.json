@@ -1,0 +1,27 @@
+{
+  "name": "rest-api_ni-yan_11897724",
+  "version": "1.0.0",
+  "description": "Assessment 2 01-REST API",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:ci": "jest --ci --runInBand"
+  },
+  "author": "Ni Yan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.2",
+    "mongoose-paginate-v2": "^1.9.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "mongodb-memory-server": "^10.1.4",
+    "supertest": "^7.1.1"
+  }
+}

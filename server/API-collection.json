@@ -1,0 +1,1052 @@
+{
+  "v": 6,
+  "name": "Assessment 2",
+  "folders": [
+    {
+      "v": 6,
+      "name": "drivers",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "Create a driver ",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/drivers",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\"firstName\": \"John\", \"lastName\": \"Doe\", \"licenceNumber\": \"XYZ999\"}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get all drivers",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/drivers",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"67f0859e97b8a80cca3ed549\",        \n  \"vehicle\": \"67f1c6b097c788083de64ad1\",     \n  \"startLocation\": \"Brisbane\",\n  \"endLocation\": \"Gold Coast\",\n  \"startTime\": \"2025-04-09T08:00:00.000Z\",\n  \"endTime\": \"2025-04-09T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Create a driver without licenceNumber",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/drivers",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "\t{ \"firstName\": \"John\" }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Create a driver - already exist",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/drivers",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\"firstName\": \"John\", \"lastName\": \"Doe\", \"licenceNumber\": \"XYZ789\"}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a driver by _id",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/drivers/67e2a470d70df9cb86afa1e4",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\"firstName\": \"John\", \"lastName\": \"Doe\", \"licenceNumber\": \"XYZ789\"}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a driver by invalid _id",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/drivers/67e2a470d70df9cb",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\"firstName\": \"John\", \"lastName\": \"Doe\", \"licenceNumber\": \"XYZ789\"}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a driver by _id but not exist",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/drivers/67e2a470d70df9cb86afa1e5",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\"firstName\": \"John\", \"lastName\": \"Doe\", \"licenceNumber\": \"XYZ789\"}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a driver info--search by _id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/drivers/67f0bcbdf7fbb2a19f7846da",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": " {\n    \"_id\": \"67f0bcbdf7fbb2a19f7846da\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doeeeeeeeeeeeeeeeeeeeeeeeeeee\",\n    \"licenceNumber\": \"XYZ999\",\n    \"createdAt\": \"2025-04-05T05:16:45.205Z\",\n    \"updatedAt\": \"2025-04-05T05:16:45.205Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a driver info--search by _id-doesn't exist",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/drivers/67f0859e97b8a80cca3ed549",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"_id\": \"67e2a470d70df9cb86aeeee\",\n  \"firstName\": \"Aldddddd\",\n  \"lastName\": \"Liang\",\n  \"licenceNumber\": \"ABC3455\",\n  \"createdAt\": \"2025-03-25T12:41:20.281Z\",\n  \"updatedAt\": \"2025-03-25T12:41:20.281Z\",\n  \"__v\": 0\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a driver info--search by _id-without id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/drivers/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"_id\": \"67e2a470d70df9cb86afa1e4\",\n  \"firstName\": \"Allen\",\n  \"lastName\": \"Lianggg\",\n  \"licenceNumber\": \"ABC3333455\",\n  \"createdAt\": \"2025-03-25T12:41:20.281Z\",\n  \"updatedAt\": \"2025-03-25T12:41:20.281Z\",\n  \"__v\": 0\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a driver info--search by id-invalid id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/drivers/67e2a4aed70df9cb",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67e2a4aed70df9cb86afa1e8\",\n    \"firstName\": \"Adammmmmmddddddddsssssss\",\n    \"lastName\": \"Li\",\n    \"licenceNumber\": \"ABC567dddd777ddddddddd\",\n    \"createdAt\": \"2025-03-25T12:42:22.374Z\",\n    \"updatedAt\": \"2025-03-25T12:42:22.374Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a driver info--search by id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/drivers/67f0859e97b8a80cca3ed549",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67e2a4aed70df9cb86afa1e8\",\n    \"firstName\": \"Adammmmmmddddddddsssssss\",\n    \"lastName\": \"Li\",\n    \"licenceNumber\": \"ABC567dddd777ddddddddd\",\n    \"createdAt\": \"2025-03-25T12:42:22.374Z\",\n    \"updatedAt\": \"2025-03-25T12:42:22.374Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a driver info--search by id-invalid id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/drivers/67e2a4aed70df9cb",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67e2a4aed70df9cb86afa1e8\",\n    \"firstName\": \"Adammmmmmddddddddsssssss\",\n    \"lastName\": \"Li\",\n    \"licenceNumber\": \"ABC567dddd777ddddddddd\",\n    \"createdAt\": \"2025-03-25T12:42:22.374Z\",\n    \"updatedAt\": \"2025-03-25T12:42:22.374Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a driver info--no id provided",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/drivers/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67e2a4aed70df9cb86afa1e8\",\n    \"firstName\": \"Adammmmmmddddddddsssssss\",\n    \"lastName\": \"Li\",\n    \"licenceNumber\": \"ABC567dddd777ddddddddd\",\n    \"createdAt\": \"2025-03-25T12:42:22.374Z\",\n    \"updatedAt\": \"2025-03-25T12:42:22.374Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authActive": true,
+        "authType": "inherit"
+      },
+      "headers": [],
+      "_ref_id": "coll_m93fact5_411876d4-30f7-460d-ae5b-ff9303c36c7e"
+    },
+    {
+      "v": 6,
+      "name": "vehicles",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "Create some vehicles",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/vehicles/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantradddd\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\",\n  \"plateNumber\": \"QWE655\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get all vehicles",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/vehicles/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantra\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\",\n  \"plateNumber\": \"QWE654\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a vehicle by id",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c6a897c788083de64acb",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantra\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\",\n  \"plateNumber\": \"QWE654\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a vehicle by id_not exist",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1b2498b9306b49e71e844",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantra\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\",\n  \"plateNumber\": \"QWE654\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a vehicle by invalid id",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1b249",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantra\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\",\n  \"plateNumber\": \"QWE654\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Create a vehicle-missing make or model or platenumber",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/vehicles",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantra\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\"\n  \n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Create a vehicle - already exist",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/vehicles/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"make\": \"Hyundai\",\n  \"model\": \"Elantra\",\n  \"year\": 2022,\n  \"driver\": \"6610e0adf1e4d5d037234a87\",\n  \"plateNumber\": \"QWE654\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a vehicle without id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/vehicles/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a vehicle ",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c6a897c788083de64acb",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyotddddda\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a vehicle - invalid vehicle id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c69297c7880",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a vehicle - invalid driver id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c8ad97c788083de64add",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n    \"_id\": \"67f1c8ad97c788083de64add\",\n    \"make\": \"Hyundai\",\n    \"model\": \"Elantraaaaaaaaaa\",\n    \"year\": 2022,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"createdAt\": \"2025-04-06T00:19:57.529Z\",\n    \"updatedAt\": \"2025-04-06T00:19:57.529Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a vehicle - missing make or model",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c69297c788083de64ac8",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a vehicle - vehicle not found",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c69297c788083de64ac0",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a vehicle",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c8b497c788083de64adf",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a vehicle- invalid id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c69297c788083d",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a vehicle- not found",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/vehicles/67f1c69297c788083de64ac0",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a vehicle- missing vehicle id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/vehicles/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authActive": true,
+        "authType": "inherit"
+      },
+      "headers": [],
+      "_ref_id": "coll_m93fayo1_3f07ce3d-8d5d-4277-85a2-e3c63a531fb3"
+    },
+    {
+      "v": 6,
+      "name": "trips",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "Create some trips",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"661007e0f11c99d3f4691234\",\n  \"vehicle\": \"66103b56aa07a1b720b01234\",\n  \"startLocation\": \"Brisbane\",\n  \"endLocation\": \"Gold Coast\",\n  \"startTime\": \"2025-04-05T08:00:00.000Z\",\n  \"endTime\": \"2025-04-05T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get all trips",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"222207e0f11c99d3f4695678\",\n  \"vehicle\": \"22223b56aa07a1b720b05678\",\n  \"startLocation\": \"Melbourn\",\n  \"endLocation\": \"Sunshine Coast\",\n  \"startTime\": \"2025-04-05T08:00:00.000Z\",\n  \"endTime\": \"2025-04-05T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a trip by id",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45318",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"222207e0f11c99d3f4695678\",\n  \"vehicle\": \"22223b56aa07a1b720b05678\",\n  \"startLocation\": \"Melbourn\",\n  \"endLocation\": \"Sunshine Coast\",\n  \"startTime\": \"2025-04-05T08:00:00.000Z\",\n  \"endTime\": \"2025-04-05T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a trip by id_not exist",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45319",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"222207e0f11c99d3f4695678\",\n  \"vehicle\": \"22223b56aa07a1b720b05678\",\n  \"startLocation\": \"Melbourn\",\n  \"endLocation\": \"Sunshine Coast\",\n  \"startTime\": \"2025-04-05T08:00:00.000Z\",\n  \"endTime\": \"2025-04-05T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Get a trip by invalid id",
+          "method": "GET",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c398",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"222207e0f11c99d3f4695678\",\n  \"vehicle\": \"22223b56aa07a1b720b05678\",\n  \"startLocation\": \"Melbourn\",\n  \"endLocation\": \"Sunshine Coast\",\n  \"startTime\": \"2025-04-05T08:00:00.000Z\",\n  \"endTime\": \"2025-04-05T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Post a trip - missing driver or vehicle info",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"driver\": \"222207e0f11c99d3f4695678\",\n  \n  \"startLocation\": \"Melbourn\",\n  \"endLocation\": \"Sunshine Coast\",\n  \"startTime\": \"2025-04-05T08:00:00.000Z\",\n  \"endTime\": \"2025-04-05T09:30:00.000Z\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Post a trip - already exists",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": " {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f11c99d3f4691234\",\n    \"vehicle\": \"66103b56aa07a1b720b01234\",\n    \"startLocation\": \"Brisbane\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Post a trip -  no start time info",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": " {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f11c99d3f4691234\",\n    \"vehicle\": \"66103b56aa07a1b720b01234\",\n    \"startLocation\": \"Brisbane\",\n    \"endLocation\": \"Gold Coast\",\n   \n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Post a trip -  not valid driver or vehicle id",
+          "method": "POST",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": " {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"66199d3f4691234\",\n    \"vehicle\": \"66103b56b720b01234\",\n    \"startLocation\": \"Brisbane\",\n    \"endLocation\": \"Gold Coast\",\n   \n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a trip with id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/trips",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f1c69297c788083de64ac8\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2020,\n    \"driver\": \"6610e0adf1e4d5d037234a87\",\n    \"plateNumber\": \"ABC5555\",\n    \"createdAt\": \"2025-04-06T00:10:58.533Z\",\n    \"updatedAt\": \"2025-04-06T00:10:58.533Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a trip -  update the startLocation",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45318",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f11c99d3f4691234\",\n    \"vehicle\": \"66103b56aa07a1b720b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a trip -  invalid id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c3984",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f11c99d3f4691234\",\n    \"vehicle\": \"66103b56aa07a1b720b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a trip -  trip not exist",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45314",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f11c99d3f4691234\",\n    \"vehicle\": \"66103b56aa07a1b720b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a trip -  no driver info",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45318",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n  \n    \"vehicle\": \"66103b56aa07a1b720b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Update a trip -  not valid driver or vehicle id",
+          "method": "PUT",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45318",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f14691234\",\n    \"vehicle\": \"66103b56aa020b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a trip by id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/trips/67f1a6bf171dc07c357403f4",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f14691234\",\n    \"vehicle\": \"66103b56aa020b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a trip - invalid id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841a",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f14691234\",\n    \"vehicle\": \"66103b56aa020b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a trip - trip not found",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/trips/67f0eb8b367c39841aa45319",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f14691234\",\n    \"vehicle\": \"66103b56aa020b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "Delete a trip - missing trip id",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl2>>/trips/",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n    \"_id\": \"67f0eb8b367c39841aa45318\",\n    \"driver\": \"661007e0f14691234\",\n    \"vehicle\": \"66103b56aa020b01234\",\n    \"startLocation\": \"New Zealand\",\n    \"endLocation\": \"Gold Coast\",\n    \"startTime\": \"2025-04-05T08:00:00.000Z\",\n    \"endTime\": \"2025-04-05T09:30:00.000Z\",\n    \"createdAt\": \"2025-04-05T08:36:27.067Z\",\n    \"updatedAt\": \"2025-04-05T08:36:27.067Z\",\n    \"__v\": 0\n  }"
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "_ref_id": "coll_m93fg1d8_fb2aacfe-f840-415d-9f1b-ae4213139213"
+    }
+  ],
+  "requests": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": [],
+  "_ref_id": "coll_m93f7jyn_1aed46f4-abe2-4bcd-a94a-4fc13f9d7bc0"
+}
